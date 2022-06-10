@@ -1,0 +1,55 @@
+pai(renato,gustavo).
+pai(alvino,renato).
+pai(alvino,richardo).
+pai(catalino,flavia).
+pai(catalino,arturo).
+pai(catalino,leonardo).
+pai(richardo,thamires).
+pai(richardo,thaissa).
+pai(arturo,isabela).
+pai(arturo,nicolas).
+
+mae(flavia,gustavo).
+mae(alice,flavia).
+mae(alice,arturo).
+mae(alice,leonardo).
+mae(ivete,renato).
+mae(ivete,richardo).
+mae(ivanessa,nicolas).
+mae(ivanessa,isabela).
+
+antecessor(X,Y) :- pai(X,Y).
+antecessor(X,Y) :- mae(X,Y).
+antecessor(X,Y) :- mae(X,Z), antecessor(Z,Y).
+antecessor(X,Y) :- pai(X,Z), antecessor(Z,Y).
+
+
+avo_paterno(X,Y) :- pai(X,Z),pai(Z,Y).
+avo_materno(X,Y) :- pai(X,Z),mae(Z,Y).
+
+avó_paterno(X,Y) :- mae(X,Z),t init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/GustavoAlot/prolog.git
+git push -u origin main
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/GustavoAlot/prolog.git
+git branch -M main
+git push -u origin mainmae(Z,Y).
+avó_materna(X,Y) :- mae(X,Z),mae(Z,Y).
+
+
+irmao(X,Y) :- pai(Z,X),pai(Z,Y), X \= Y.
+
+       
+primo(X,Y) :- pai(Z,X), pai(W,Y), irmao(Z,W).
+primo(X,Y) :- mae(Z,X), mae(W,Y), irmao(Z,W).
+primo(X,Y) :- pai(Z,X), mae(W,Y), irmao(Z,W).
+
+
+
+
+
