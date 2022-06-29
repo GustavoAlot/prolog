@@ -8,10 +8,10 @@ pai(richardo,thamires).
 pai(richardo,thaissa).
 pai(arturo,isabela).
 pai(arturo,nicolas).
-pai(X,alvino).
-pai(X,ivete).
-pai(X,alice).
-pai(X,catalino).
+pai(vido,alvino).
+pai(luiz,ivete).
+pai(joao,alice).
+pai(julio,catalino).
 
 
 mae(flavia,gustavo).
@@ -22,10 +22,10 @@ mae(ivete,renato).
 mae(ivete,richardo).
 mae(ivanessa,nicolas).
 mae(ivanessa,isabela).
-mae(Y,alice).
-mae(Y,catalino).
-mae(Y,alvino).
-mae(Y,ivete).
+mae(geralda,alice).
+mae(consuela,catalino).
+mae(lucia,alvino).
+mae(enalva,ivete).
 
 
 antecessor(X,Y) :- pai(X,Y).
